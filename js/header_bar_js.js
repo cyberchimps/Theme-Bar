@@ -1,0 +1,1 @@
+/*	Name : header_bar_js.js	Description : Defines JS for header bar.*/jQuery(document).ready(function(){	jQuery('.close_button').click(function() {				// Slides up the header bar when close button is clicked		jQuery('.header_bar').slideUp('slow');	});		jQuery('.theme_selector').change(function() {		window.location=jQuery('.theme_selector').val();	});});

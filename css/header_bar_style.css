@@ -1,0 +1,103 @@
+/*
+	Name : header_bar_style.css
+	Description : Defines style for the header bar
+*/
+
+/* Style for admin option starts */
+.button_text{
+	text-align: right;
+	vertical-align: top;
+}
+
+.button_link{
+	text-align: right;
+	vertical-align: top;
+}
+/* Style for admin option ends */
+
+/* Style for header bar UI starts */
+
+a {
+	text-decoration: none;
+}
+
+.header_bar {
+	background-color: black;
+	overflow: hidden;
+}
+
+.logo {
+	margin: 1.3% 5% 1.3% 33%;
+	min-width: 130px;
+	width: 40% !important;
+	height: 45px;
+	vertical-align: baseline;
+	
+}
+
+.header_button {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	padding:5px 20px;
+	background:#F6F6F6;
+	color: #666666;
+	font-size: 20px;
+	border:0px;
+	cursor: pointer;
+	margin-bottom: 0 !important;
+}
+
+td {
+	border-top: none;
+	padding: 0px !important;
+	vertical-align: middle !important;
+	font-size: 14px !important;
+	line-height: 21px !important;
+}
+
+td.cross {
+	margin: 5px 10px 10px 10px;
+	text-align: right;
+	opacity: 1;
+}
+
+td.buy_button {
+	text-align: right;
+}
+
+.close_button {
+	cursor: pointer;
+	margin: 10px 15px 37px 10px;
+	height: 15px;
+	width: 15px;
+	vertical-align: baseline;
+}
+
+table.header_bar {
+	background: none !important;
+	margin: 0px !important;
+	border: 0px !important;
+}
+
+.theme_selector {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	padding:5px;
+	background:#F6F6F6;
+	color: #666666;
+	font-size: 20px;
+	border:0px;
+	margin: auto !important;
+	height:	auto !important;
+	width: auto !important;
+	min-width: 200px;
+	font-family: 'Arial',Helvetica,sans-serif;
+}
+
+td.theme_change {
+	text-align: center !important;
+}
+
+/* Style for header bar UI ends */
