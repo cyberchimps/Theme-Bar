@@ -3,18 +3,6 @@
 	Description : Defines style for the header bar
 */
 
-/* Style for admin option starts */
-.button_text{
-	text-align: right;
-	vertical-align: top;
-}
-
-.button_link{
-	text-align: right;
-	vertical-align: top;
-}
-/* Style for admin option ends */
-
 /* Style for header bar UI starts */
 
 a {
