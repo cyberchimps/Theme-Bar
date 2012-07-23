@@ -393,10 +393,10 @@ if ( !class_exists( 'header_bar' ) ) {
 		}  // End of options_panel
 	} 	// End of class
 
-	add_option( 'custom_logo_url', '');  // Adding option for custom logo url
 	add_option( 'button_text', '' );  // Adding option for button text
 	add_option( 'button_link', '' );  // Adding option for button link
 	add_option( 'theme_links', '');  // Adding option for theme list
+	add_option( 'custom_logo_url', '');  // Adding option for custom logo url
 
 	$wp_header_bar = new header_bar();	// Creating object of header_bar class
 

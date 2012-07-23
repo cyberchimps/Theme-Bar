@@ -53,16 +53,20 @@ a {
 	width: 100%;
 }
 
+table {
+	background: #000;
+}
+
 .header_bar_container table  td {
 	padding: 0px !important;
-	border: 0px
+	border: 0px;
+	text-align: center;
 }
 
 .logo {
-	min-width: 130px;
-	width: 50% !important;
 	height: 45px;
 	margin:auto;
+	max-width: auto !important;
 }
 
 .header_button {
@@ -98,6 +102,8 @@ a {
 	font-size: 20px;
 	min-width: 165px;
 	font-family: 'Arial',Helvetica,sans-serif;
+	width: auto;
+	height: 37px;
 }
 
 /* Style for header bar UI ends */
