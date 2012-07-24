@@ -61,7 +61,6 @@ if ( !class_exists( 'header_bar' ) ) {
 			// Registers setting
 			register_setting( 'header_bar_setting', 'button_text', 'trim' );
 			register_setting( 'header_bar_setting', 'button_link', 'trim' );
-			register_setting( 'header_bar_setting', 'custom_logo_url', 'trim' );
 			
 			// Includes JS to validate admin setting form
 			wp_register_script( 'validator', plugins_url('js/jquery.validate.js', __FILE__), array('jquery') );
@@ -267,25 +266,27 @@ if ( !class_exists( 'header_bar' ) ) {
 					$id = 0; // initialize counter to track theme_id
 					
 					// display one row for each record on theme list
-					foreach( $theme_list as $theme_details) { 
-					?>
-						<tr class="<?php echo $id%2 == 0? "theme_list_alt1" : "theme_list_alt2"; ?>" >
-							<td> <?php echo $theme_details['theme_name']; ?> </td>   <!-- Display theme name -->
-							<td> <?php echo $theme_details['theme_url']; ?> </td>	 <!-- Display theme url -->
-							<td>
-								<!-- Display edit link -->
-								<a href="<?php echo $admin_url. "options-general.php?page=Theme-Bar/header_bar.php&action=edit&id=". $id; ?>" >
-								<img title="edit" src="<?php echo $plugins_url . "/theme-bar/image/edit.png" ?>" /></a>
-								
-								<!-- Display delete link -->
-								<a href="<?php echo $admin_url. "options-general.php?page=Theme-Bar/header_bar.php&action=delete&id=". $id; ?>" 
-								onclick="return confirm('Are you sure to delete?');">
-								<img title="delete" src="<?php echo $plugins_url . "/theme-bar/image/delete.png" ?>" /></a>
-							</td>
-						</tr>
-					<?php 
-					$id++;  // increament the counter 
-					} ?>	
+					if(  $theme_list != "" ) {
+						foreach( $theme_list as $theme_details) { 
+						?>
+							<tr class="<?php echo $id%2 == 0? "theme_list_alt1" : "theme_list_alt2"; ?>" >
+								<td> <?php echo $theme_details['theme_name']; ?> </td>   <!-- Display theme name -->
+								<td> <?php echo $theme_details['theme_url']; ?> </td>	 <!-- Display theme url -->
+								<td>
+									<!-- Display edit link -->
+									<a href="<?php echo $admin_url. "options-general.php?page=Theme-Bar/header_bar.php&action=edit&id=". $id; ?>" >
+									<img title="edit" src="<?php echo $plugins_url . "/theme-bar/image/edit.png" ?>" /></a>
+									
+									<!-- Display delete link -->
+									<a href="<?php echo $admin_url. "options-general.php?page=Theme-Bar/header_bar.php&action=delete&id=". $id; ?>" 
+									onclick="return confirm('Are you sure to delete?');">
+									<img title="delete" src="<?php echo $plugins_url . "/theme-bar/image/delete.png" ?>" /></a>
+								</td>
+							</tr>
+						<?php 
+						$id++;  // increament the counter 
+						} 
+					}?>	
 					
 					<!-- Display link to add new theme details -->
 					<tr>
