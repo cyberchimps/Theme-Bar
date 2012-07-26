@@ -19,8 +19,8 @@ if ( !class_exists( 'header_bar' ) ) {
 		function header_bar() {
 		
 			// Initialise plugin
-			add_action( 'admin_init', array( &$this, 'admin_init' ) );
-			add_action( 'admin_menu', array( &$this, 'admin_menu' ) );
+			add_action( 'admin_init', array( &$this, 'admin_initialize' ) );
+			add_action( 'admin_menu', array( &$this, 'add_admin_menu' ) );
 			add_action( 'wp_head', array( &$this, 'header_content' ) );
 	
 			// Action to incude css
@@ -56,7 +56,7 @@ if ( !class_exists( 'header_bar' ) ) {
 		}
 	
 		// Initialise plugin - admin part
-		function admin_init() {
+		function admin_initialize() {
 			
 			// Registers setting
 			register_setting( 'header_bar_setting', 'button_text', 'trim' );
@@ -70,9 +70,9 @@ if ( !class_exists( 'header_bar' ) ) {
 		}
 		
 		// Add admin menu option
-		function admin_menu() {
+		function add_admin_menu() {
 			add_submenu_page( 'options-general.php', 'Header bar option', 
-				'Header bar option', 'manage_options', __FILE__, array( &$this, 'options_panel' ) );
+				'Header bar option', 'manage_options', 'theme-bar' , array( &$this, 'options_panel' ) );
 		}
 		
 		// Function to define mark up for header bar 
@@ -274,11 +274,11 @@ if ( !class_exists( 'header_bar' ) ) {
 								<td> <?php echo $theme_details['theme_url']; ?> </td>	 <!-- Display theme url -->
 								<td>
 									<!-- Display edit link -->
-									<a href="<?php echo $admin_url. "options-general.php?page=Theme-Bar/header_bar.php&action=edit&id=". $id; ?>" >
+									<a href="<?php echo "options-general.php?page=theme-bar&action=edit&id=". $id; ?>" >
 									<img title="edit" src="<?php echo $plugins_url . "/theme-bar/image/edit.png" ?>" /></a>
 									
 									<!-- Display delete link -->
-									<a href="<?php echo $admin_url. "options-general.php?page=Theme-Bar/header_bar.php&action=delete&id=". $id; ?>" 
+									<a href="<?php echo $admin_url. "options-general.php?page=theme-bar&action=delete&id=". $id; ?>" 
 									onclick="return confirm('Are you sure to delete?');">
 									<img title="delete" src="<?php echo $plugins_url . "/theme-bar/image/delete.png" ?>" /></a>
 								</td>
@@ -291,7 +291,7 @@ if ( !class_exists( 'header_bar' ) ) {
 					<!-- Display link to add new theme details -->
 					<tr>
 						<td>  
-							<a class="add_theme_link" href="<?php echo $admin_url. "options-general.php?page=Theme-Bar/header_bar.php&action=add"; ?>">
+							<a class="add_theme_link" href="options-general.php?page=theme-bar&action=add">
 							Add New Theme<img class="add_theme_img" src="<?php echo $plugins_url . "/theme-bar/image/add.png" ?>"></a>
 						</td>
 					</tr>
